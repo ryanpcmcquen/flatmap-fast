@@ -1,6 +1,6 @@
 {
   "name": "flatmap-fast",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A fast and modern flatMap for node. Monads for the win!",
   "main": "index.js",
   "scripts": {
