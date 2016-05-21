@@ -1,10 +1,12 @@
-/*! flatmap-fast v1.0.0 by ryanpcmcquen */
+/*! flatmap-fast v1.0.1 by ryanpcmcquen */
 /*global exports*/
 /*jshint esversion:6*/
 
-exports.flatMap = (a) => {
+const flatMap = (a) => {
   const flat = [];
   return a.map((i) => {
     return flat.push(i);
   });
 };
+
+module.exports = flatMap;
