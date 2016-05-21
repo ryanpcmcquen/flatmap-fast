@@ -1,4 +1,5 @@
-/*! flatmap-fast v1.0.3 by ryanpcmcquen */
+/*! flatmap-fast v1.0.4 by ryanpcmcquen */
+
 /*global exports*/
 /*jshint esversion:6*/
 

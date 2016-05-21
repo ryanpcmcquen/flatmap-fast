@@ -1,6 +1,6 @@
 {
   "name": "flatmap-fast",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A fast and modern flatMap for node. Monads for the win!",
   "main": "index.js",
   "scripts": {
@@ -23,6 +23,6 @@
   "engines": {
     "node": ">=4.x.x"
   },
-  "tonicExampleFilename": "test.js",
+  "tonicExampleFilename": "tonicExample.js",
   "homepage": "https://github.com/ryanpcmcquen/flatmap-fast#readme"
 }
