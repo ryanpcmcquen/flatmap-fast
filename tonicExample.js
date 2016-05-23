@@ -2,11 +2,15 @@
   'use strict';
   const flatMap = require('flatmap-fast');
 
-  const arr = [
+  const arrNum = [
     [],
     [1],
     [2, 3]
   ];
 
-  return flatMap(arr);
+  return (
+    flatMap(arrNum, (i) => {
+      return i + i;
+    })
+  );
 })();

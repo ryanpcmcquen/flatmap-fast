@@ -2,13 +2,20 @@
   'use strict';
   const flatMap = require('./index.js');
 
-  const arr = [
+  const arrNum = [
     [],
     [1],
     [2, 3]
   ];
 
-  console.log(flatMap(arr));
+  const arrLet = [
+    [],
+    ['a'],
+    ['b', 'c']
+  ];
+  console.log(flatMap(arrNum, (i) => {
+    return i + i;
+  }), flatMap(arrLet));
 })();
 
-// => [ 1, 2, 3]
+// => [ 2, 4, 6 ] [ 'a', 'b', 'c' ]
