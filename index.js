@@ -1,6 +1,6 @@
-/*! flatmap-fast v2.0.0 by ryanpcmcquen */
+/*! flatmap-fast v2.0.1 by ryanpcmcquen */
 
-/*global exports*/
+/*global module*/
 /*jshint esversion:6*/
 
 const flatMap = (a, f) => {

@@ -32,3 +32,5 @@ flatMap(arrLet);
 
 // => [ 'a', 'b', 'c' ]
 ```
+
+Run `npm test` to test this flatMap against other algorithms.
