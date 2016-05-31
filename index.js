@@ -1,4 +1,4 @@
-/*! flatmap-fast v2.0.1 by ryanpcmcquen */
+/*! flatmap-fast v2.0.2 by ryanpcmcquen */
 
 /*global module*/
 /*jshint esversion:6*/
@@ -9,7 +9,7 @@ const flatMap = (a, f) => {
       return x.concat(y);
     });
   };
-  return !f ? flatten(a) : flatten(a).map(f);
+  return (!f) ? flatten(a) : flatten(a).map(f);
 };
 
 module.exports = flatMap;
