@@ -4,7 +4,7 @@
 /*jshint esversion:6*/
 
 const flatMap = (a, f) => {
-  const flatten = () => {
+  const flatten = (a) => {
     return a.reduce((x, y) => {
       return x.concat(y);
     });
