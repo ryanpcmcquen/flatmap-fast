@@ -1,14 +1,13 @@
-/*! flatmap-fast v2.0.2 by ryanpcmcquen */
+/*! flatmap-fast v2.0.3 by ryanpcmcquen */
+// @flow
 
-/*global module*/
-/*jshint esversion:6*/
+const flatten = (a) => {
+  return a.reduce((x, y) => {
+    return x.concat(y);
+  });
+};
 
-const flatMap = (a, f) => {
-  const flatten = () => {
-    return a.reduce((x, y) => {
-      return x.concat(y);
-    });
-  };
+const flatMap = (a /*:Array<any>*/ , f /*:Function*/ ) => {
   return (!f) ? flatten(a) : flatten(a).map(f);
 };
 
