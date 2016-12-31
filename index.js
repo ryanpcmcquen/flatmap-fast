@@ -8,7 +8,7 @@ const flatten = (a) => {
 };
 
 const flatMap = (a /*:Array<any>*/ , f /*:Function*/ ) => {
-  return (!f) ? flatten(a) : flatten(a).map(f);
+  return (!f) ? flatten(a) : flatten(a.map(f));
 };
 
 module.exports = flatMap;

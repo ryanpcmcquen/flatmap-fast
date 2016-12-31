@@ -17,7 +17,7 @@ const flatMapConcatApply = (a, f) => {
   const flatten = () => {
     return Array.prototype.concat.apply([], a);
   };
-  return (!f) ? flatten(a) : flatten(a).map(f);
+  return (!f) ? flatten(a) : flatten(a.map(f));
 };
 
 // Note that this version requires the `--harmony` flag.
@@ -25,14 +25,22 @@ const flatMapConcatRest = (a, f) => {
   const flatten = () => {
     return Array.prototype.concat(...a);
   };
-  return (!f) ? flatten(a) : flatten(a).map(f);
+  return (!f) ? flatten(a) : flatten(a.map(f));
 };
+
+const flatMapConcatSliceCall = (a, f) => {
+  const flatten = () => {
+    return Array.prototype.concat(Array.prototype.slice.call(a));
+  };
+  return (!f) ? flatten(a) : flatten(a.map(f));
+};
+
 
 const flatMapApplyBind = (a, f) => {
   const flatten = () => {
     return Function.apply.bind(Array.prototype.concat, [])(a);
   };
-  return (!f) ? flatten(a) : flatten(a).map(f);
+  return (!f) ? flatten(a) : flatten(a.map(f));
 };
 
 /* https://www.npmjs.com/package/flatmap v0.0.3 */
@@ -72,6 +80,13 @@ testPerf("flatMapConcatRest", flatMapConcatRest, arrNum, (i) => {
   return i + i;
 });
 console.log(flatMapConcatRest(arrNum, (i) => {
+  return i + i;
+}));
+
+testPerf("flatMapConcatSliceCall", flatMapConcatSliceCall, arrNum, (i) => {
+  return i + i;
+});
+console.log(flatMapConcatSliceCall(arrNum, (i) => {
   return i + i;
 }));
 
