@@ -1,21 +1,12 @@
 (() => {
   'use strict';
-  const flatMap = require('./index.js');
+  
+  const flatMap = require("flatmap-fast");
 
-  const arrNum = [
-    [],
-    [1],
-    [2, 3]
-  ];
+  const testArr = ['Hi', 'World'];
+  const splitWord = (word) => word.split('');
 
-  const arrLet = [
-    [],
-    ['a'],
-    ['b', 'c']
-  ];
-  console.log(flatMap(arrNum, (i) => {
-    return i + i;
-  }), flatMap(arrLet));
+  flatMap(testArr, splitWord);
+
+  // => ['H', 'i', 'W', 'o', 'r', 'l', 'd']
 })();
-
-// => [ 2, 4, 6 ] [ 'a', 'b', 'c' ]

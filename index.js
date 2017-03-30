@@ -1,4 +1,4 @@
-/*! flatmap-fast v2.0.3 by ryanpcmcquen */
+/*! flatmap-fast v3.0.0 by ryanpcmcquen */
 // @flow
 
 const flatten = (a) => {
@@ -12,3 +12,4 @@ const flatMap = (a /*:Array<any>*/ , f /*:Function*/ ) => {
 };
 
 module.exports = flatMap;
+

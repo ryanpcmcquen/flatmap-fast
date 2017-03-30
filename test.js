@@ -1,47 +1,9 @@
 'use strict';
-const arrNum = [
-  [],
-  [1],
-  [2, 3]
-];
 
-const arrLet = [
-  [],
-  ['a'],
-  ['b', 'c']
-];
+const testArr = ['Hi', 'World'];
+const splitWord = (word) => word.split('');
 
 const flatMapFast = require('./index.js');
-
-const flatMapConcatApply = (a, f) => {
-  const flatten = () => {
-    return Array.prototype.concat.apply([], a);
-  };
-  return (!f) ? flatten(a) : flatten(a.map(f));
-};
-
-// Note that this version requires the `--harmony` flag.
-const flatMapConcatRest = (a, f) => {
-  const flatten = () => {
-    return Array.prototype.concat(...a);
-  };
-  return (!f) ? flatten(a) : flatten(a.map(f));
-};
-
-const flatMapConcatSliceCall = (a, f) => {
-  const flatten = () => {
-    return Array.prototype.concat(Array.prototype.slice.call(a));
-  };
-  return (!f) ? flatten(a) : flatten(a.map(f));
-};
-
-
-const flatMapApplyBind = (a, f) => {
-  const flatten = () => {
-    return Function.apply.bind(Array.prototype.concat, [])(a);
-  };
-  return (!f) ? flatten(a) : flatten(a.map(f));
-};
 
 /* https://www.npmjs.com/package/flatmap v0.0.3 */
 const flatmapjs = function (arr, iter, context) {
@@ -60,50 +22,10 @@ const flatmapjs = function (arr, iter, context) {
 
 const testPerf = require('testperf');
 
-testPerf("flatMapFast", flatMapFast, arrNum, (i) => {
-  return i + i;
-});
-console.log(flatMapFast(arrNum, (i) => {
-  return i + i;
-}));
-console.log(flatMapFast(arrLet));
-testPerf("flatMapConcatApply", flatMapConcatApply, arrNum, (i) => {
-  return i + i;
-});
-console.log(flatMapConcatApply(arrNum, (i) => {
-  return i + i;
-}));
-console.log(flatMapConcatApply(arrLet));
+testPerf("flatMapFast", flatMapFast, testArr, splitWord);
+console.log(flatMapFast(testArr, splitWord));
 
-// Note that this version requires the `--harmony` flag.
-testPerf("flatMapConcatRest", flatMapConcatRest, arrNum, (i) => {
-  return i + i;
-});
-console.log(flatMapConcatRest(arrNum, (i) => {
-  return i + i;
-}));
+testPerf("flatmapjs", flatmapjs, testArr, splitWord);
+console.log(flatmapjs(testArr, splitWord));
 
-testPerf("flatMapConcatSliceCall", flatMapConcatSliceCall, arrNum, (i) => {
-  return i + i;
-});
-console.log(flatMapConcatSliceCall(arrNum, (i) => {
-  return i + i;
-}));
 
-testPerf("flatMapApplyBind", flatMapApplyBind, arrNum, (i) => {
-  return i + i;
-});
-console.log(flatMapApplyBind(arrNum, (i) => {
-  return i + i;
-}));
-console.log(flatMapApplyBind(arrLet));
-
-testPerf("flatmapjs", flatmapjs, arrNum, (i) => {
-  return i + i;
-});
-console.log(flatmapjs(arrNum, (i) => {
-  return i + i;
-}));
-console.log(flatmapjs(arrLet, (i) => {
-  return i;
-}));
