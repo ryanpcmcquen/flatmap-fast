@@ -1,4 +1,4 @@
-/*! flatmap-fast v2.0.3 by ryanpcmcquen */
+/*! flatmap-fast v3.0.0 by ryanpcmcquen */
 // @flow
 
 const flatten = (a) => {
@@ -8,7 +8,8 @@ const flatten = (a) => {
 };
 
 const flatMap = (a /*:Array<any>*/ , f /*:Function*/ ) => {
-  return (!f) ? flatten(a) : flatten(a).map(f);
+  return (!f) ? flatten(a) : flatten(a.map(f));
 };
 
 module.exports = flatMap;
+
