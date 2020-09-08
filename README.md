@@ -17,7 +17,7 @@ flatMap(testArr, splitWord);
 
 // => ['H', 'i', 'W', 'o', 'r', 'l', 'd']
 
-flatMap([1, 2, 3, 4], (x) => [x, x * 2])
+flatMap([1, 2, 3, 4], (x) => [x, x * 2]);
 
 // => [1, 2, 2, 4, 3, 6, 4, 8]
 ```
