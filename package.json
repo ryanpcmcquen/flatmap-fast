@@ -1,32 +1,32 @@
 {
-  "name": "flatmap-fast",
-  "version": "3.0.0",
-  "description": "A fast and modern flatMap for node. Monads for the win!",
-  "main": "index.js",
-  "scripts": {
-    "test": "node --harmony test.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ryanpcmcquen/flatmap-fast.git"
-  },
-  "keywords": [
-    "flatmap",
-    "fast",
-    "functional",
-    "monad"
-  ],
-  "author": "Ryan P. C. McQuen",
-  "license": "GPL-2.0+",
-  "bugs": {
-    "url": "https://github.com/ryanpcmcquen/flatmap-fast/issues"
-  },
-  "engines": {
-    "node": ">=4.x.x"
-  },
-  "devDependencies": {
-    "testperf": "*"
-  },
-  "tonicExampleFilename": "tonicExample.js",
-  "homepage": "https://github.com/ryanpcmcquen/flatmap-fast#readme"
+    "name": "flatmap-fast",
+    "version": "4.0.0",
+    "description": "A fast and modern flatMap for node. Monads for the win!",
+    "main": "index.js",
+    "scripts": {
+        "test": "node test.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ryanpcmcquen/flatmap-fast.git"
+    },
+    "keywords": [
+        "flatmap",
+        "fast",
+        "functional",
+        "monad"
+    ],
+    "author": "Ryan P. C. McQuen",
+    "license": "GPL-2.0+",
+    "bugs": {
+        "url": "https://github.com/ryanpcmcquen/flatmap-fast/issues"
+    },
+    "engines": {
+        "node": ">=4.x.x"
+    },
+    "devDependencies": {
+        "testperf": "*"
+    },
+    "tonicExampleFilename": "tonicExample.js",
+    "homepage": "https://github.com/ryanpcmcquen/flatmap-fast#readme"
 }

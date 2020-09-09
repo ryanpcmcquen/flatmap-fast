@@ -1,3 +1,5 @@
+[![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/ryanpcmcquen/flatmap-fast)
+
 # flatmap-fast
 
 The fastest `flatMap` this side of `node`.
@@ -26,15 +28,32 @@ Run `npm test` to test this flatMap against other flatMaps.
 
 ```javascript
 $ node --version
-v7.8.0
-$ npm test
-
-> flatmap-fast@3.0.0 test /Users/ryan.mcquen/flatmap-fast
-> node --harmony test.js
-
-// => flatMapFast took: 916.847606 milliseconds.
-[ 'H', 'i', 'W', 'o', 'r', 'l', 'd' ]
-// => flatmapjs took: 1176.175518 milliseconds.
-[ 'H', 'i', 'W', 'o', 'r', 'l', 'd' ]
+v12.18.3
+$ yarn test
+yarn run v1.22.4
+$ node test.js
+// => flatMapFast took: 650.86651 milliseconds.
+[
+  'H', 'i', 'W',
+  'o', 'r', 'l',
+  'd'
+]
+// => flatmapjs took: 667.361729 milliseconds.
+[
+  'H', 'i', 'W',
+  'o', 'r', 'l',
+  'd'
+]
+// => flatMapFast took: 517.463478 milliseconds.
+[
+  1, 2, 2, 4,
+  3, 6, 4, 8
+]
+// => flatmapjs took: 676.208413 milliseconds.
+[
+  1, 2, 2, 4,
+  3, 6, 4, 8
+]
+Done in 2.74s.
 ```
 

@@ -1,20 +1,20 @@
 (() => {
-  'use strict';
-  
-  const flatMap = require("flatmap-fast");
+    'use strict';
 
-  const testArr = ['Hi', 'World'];
-  const splitWord = (word) => word.split('');
+    const flatMap = require("flatmap-fast");
 
-  console.log(
-    flatMap(testArr, splitWord)
-  );
+    const testArr = ['Hi', 'World'];
+    const splitWord = (word) => word.split('');
 
-  // => ['H', 'i', 'W', 'o', 'r', 'l', 'd']
-  
-  console.log(
-    flatMap([1, 2, 3, 4], (x) => [x, x * 2])
-  );
-  
-  // => [1, 2, 2, 4, 3, 6, 4, 8]
+    console.log(
+        flatMap(testArr, splitWord)
+    );
+
+    // => ['H', 'i', 'W', 'o', 'r', 'l', 'd']
+
+    console.log(
+        flatMap([1, 2, 3, 4], (x) => [x, x * 2])
+    );
+
+    // => [1, 2, 2, 4, 3, 6, 4, 8]
 })();

@@ -1,14 +1,29 @@
-/*! flatmap-fast v3.0.0 by ryanpcmcquen */
+/*! flatmap-fast v4.0.0 by ryanpcmcquen */
 // @flow
 
-const flatten = (a) => {
-  return a.reduce((x, y) => {
-    return x.concat(y);
-  });
+const flatten = (arr /*:Array<any>*/) => {
+    const result = [];
+    if (Array.isArray(arr)) {
+        for (var outerIndex = 0; outerIndex < arr.length; outerIndex++) {
+            if (Array.isArray(arr[outerIndex])) {
+                for (var innerIndex = 0; innerIndex < arr[outerIndex].length; innerIndex++) {
+                    result.push(arr[outerIndex][innerIndex]);
+                }
+            } else {
+                result.push(arr);
+            }
+        }
+    } else {
+        result.push(arr);
+    }
+
+    return result;
 };
 
-const flatMap = (a /*:Array<any>*/ , f /*:Function*/ ) => {
-  return (!f) ? flatten(a) : flatten(a.map(f));
+
+
+const flatMap = (arr /*:Array<any>*/, func /*:Function*/) => {
+    return (func) ? flatten(arr.map(func)) : flatten(arr);
 };
 
 module.exports = flatMap;
