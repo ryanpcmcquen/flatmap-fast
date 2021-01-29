@@ -1,4 +1,4 @@
-/*! flatmap-fast v4.0.0 by ryanpcmcquen */
+/*! flatmap-fast v4.0.1 by ryanpcmcquen */
 // @flow
 
 const flatten = (arr /*:Array<any>*/) => {
@@ -10,7 +10,7 @@ const flatten = (arr /*:Array<any>*/) => {
                     result.push(arr[outerIndex][innerIndex]);
                 }
             } else {
-                result.push(arr);
+                result.push(arr[outerIndex]);
             }
         }
     } else {
